@@ -9,6 +9,11 @@
 .react-tabs__tab{
     display: inline !important;
 }
+@media(max-width:768px){
+    .react-tabs__tab{
+        display: inline-block !important;
+    }
+}
 .react-tabs__tab-list{
     border-bottom: 0px solid black !important;
 }

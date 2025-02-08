@@ -64,16 +64,19 @@ const Quiz = () => {
                 >
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
                 </svg>
+                <span className="hidden md:block">
                 Curriculum
+                </span>
+               
               </button>
             </div>
-            <div className="text-sm text-gray-500 ">
+            <div className="text-sm text-gray-500  hidden md:block">
               Course:<br></br> <b>Interior design concepts Masterclass</b>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 hidden md:block">
               <span className="text-sm text-gray-500">time left:</span>
               <span className="font-mono text-blue-600">01:19:11</span>
             </div>
@@ -90,7 +93,7 @@ const Quiz = () => {
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
               </svg>
             </button>
-            <button className="hover:bg-gray-100 px-3 py-2 rounded-lg">
+            <button className="hover:bg-gray-100 px-3 py-2 rounded-lg hidden md:block">
               Discussions
             </button>
           </div>
