@@ -1,0 +1,17 @@
+.react-tabs__tab--selected{
+    border: transparent !important;
+   
+}
+.react-tabs__tab--selected span{
+    background-color: #227aff !important;
+    color: white;
+}
+.react-tabs__tab{
+    display: inline !important;
+}
+.react-tabs__tab-list{
+    border-bottom: 0px solid black !important;
+}
+.srcoll::-webkit-scrollbar{
+    display: none;
+}
