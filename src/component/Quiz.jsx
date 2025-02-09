@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { FileText, PlayCircle, CheckSquare, HelpCircle } from "lucide-react"
+
 
 const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -32,8 +34,217 @@ const Quiz = () => {
       }
     },
   };
+
+  function showSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    
+    if (sidebar.style.width === "0rem") {
+      sidebar.style.width = "20rem";
+      
+    } else {
+      sidebar.style.width = "0rem";
+     
+    }
+  }
   return (
     <div className="min-h-screen bg-white">
+
+
+    
+      {/* side bar */}
+      <div id="mySidebar" className=" sidebar z-50 fixed top-[9%] left-0  h-[90%] w-0 overflow-hidden transition-all duration-300 bg-[#eef1f7] border-l">
+        <div id="accordion-collapse" data-accordion="collapse">
+          <h2 id="accordion-collapse-heading-1">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-[#4d5e6f]     dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#accordion-collapse-body-1"
+              aria-expanded="true"
+              aria-controls="accordion-collapse-body-1"
+            >
+              <span>Starting Course</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="accordion-collapse-body-1"
+            class="hidden"
+            aria-labelledby="accordion-collapse-heading-1"
+          >
+            <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
+      {/* Intro - Definitions */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <FileText className="h-5 w-5 text-emerald-600" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Intro - Definitions</h3>
+            <p className="text-xs text-gray-500">8 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Interior Design Advanced Knowledge */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <PlayCircle className="h-5 w-5 text-orange-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Interior Design Advanced Knowledge</h3>
+            <p className="text-xs text-gray-500">4 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Interior Design Basic Knowledge */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <PlayCircle className="h-5 w-5 text-orange-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Interior Design Basic Knowledge</h3>
+            <p className="text-xs text-gray-500">9 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Make a presentation about your career */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <CheckSquare className="h-5 w-5 text-red-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Make a presentation about your career</h3>
+            <p className="text-xs text-gray-500">Assignment</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Middle Quiz */}
+      <div className="flex items-center justify-between p-4">
+        <div className="flex items-center gap-3">
+          <HelpCircle className="h-5 w-5 text-blue-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Middle Quiz</h3>
+            <p className="text-xs text-gray-500">7 questions</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+    </div>
+          </div>
+          <h2 id="accordion-collapse-heading-2">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-[#4d5e6f]     dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+              data-accordion-target="#accordion-collapse-body-2"
+              aria-expanded="false"
+              aria-controls="accordion-collapse-body-2"
+            >
+              <span>After Intro</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="accordion-collapse-body-2"
+            class="hidden"
+            aria-labelledby="accordion-collapse-heading-2"
+          >
+           <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
+      {/* Intro - Definitions */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <FileText className="h-5 w-5 text-emerald-600" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Intro - Definitions</h3>
+            <p className="text-xs text-gray-500">8 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Interior Design Advanced Knowledge */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <PlayCircle className="h-5 w-5 text-orange-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Interior Design Advanced Knowledge</h3>
+            <p className="text-xs text-gray-500">4 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Interior Design Basic Knowledge */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <PlayCircle className="h-5 w-5 text-orange-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Interior Design Basic Knowledge</h3>
+            <p className="text-xs text-gray-500">9 min</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Make a presentation about your career */}
+      <div className="flex items-center justify-between border-b border-gray-100 p-4">
+        <div className="flex items-center gap-3">
+          <CheckSquare className="h-5 w-5 text-red-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Make a presentation about your career</h3>
+            <p className="text-xs text-gray-500">Assignment</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+
+      {/* Middle Quiz */}
+      <div className="flex items-center justify-between p-4">
+        <div className="flex items-center gap-3">
+          <HelpCircle className="h-5 w-5 text-blue-500" />
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">Middle Quiz</h3>
+            <p className="text-xs text-gray-500">7 questions</p>
+          </div>
+        </div>
+        <div className="h-5 w-5 rounded-full border border-gray-200" />
+      </div>
+    </div>
+          </div>
+        </div>
+      </div>
+
       {/* Thumbnail slider */}
 
       {/* Header */}
@@ -56,7 +267,7 @@ const Quiz = () => {
               <div className=" text-white p-2 rounded w-[50px]">
                 <img src="https://masterstudy.stylemixthemes.com/light-lms-elementor/wp-content/uploads/sites/30/2023/10/icon-150x150.png"></img>
               </div>
-              <button className="flex items-center gap-2 bg-[#dee2e9] rounded-lg px-4 py-2 font-mono">
+              <button className="flex items-center gap-2 bg-[#dee2e9] rounded-lg px-4 py-2 font-mono" onClick={showSidebar}>
                 <svg
                   className="h-5 w-5"
                   viewBox="0 0 20 20"
@@ -64,10 +275,7 @@ const Quiz = () => {
                 >
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 6a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
                 </svg>
-                <span className="hidden md:block">
-                Curriculum
-                </span>
-               
+                <span className="hidden md:block">Curriculum</span>
               </button>
             </div>
             <div className="text-sm text-gray-500  hidden md:block">
@@ -345,97 +553,94 @@ const Quiz = () => {
               </div>
             </TabPanel>
 
-            
-              {/* Pagination */}
-              <div className="flex items-center justify-start gap-2 pt-16 ">
-                <button className="p-2 hover:bg-gray-100 rounded-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                </button>
+            {/* Pagination */}
+            <div className="flex items-center justify-start gap-2 pt-16 ">
+              <button className="p-2 hover:bg-gray-100 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
 
-                {/* <div className="w-[280px] overflow-x-scroll   srcoll"> */}
-                <TabList>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
+              {/* <div className="w-[280px] overflow-x-scroll   srcoll"> */}
+              <TabList>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
                        rounded-lg"
-                    >
-                      1
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      2
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      3
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      4
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      5
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      6
-                    </span>
-                  </Tab>
-                  <Tab>
-                    <span
-                      className="px-4 py-2 bg-[#eef1f7]  text-black
-                       rounded-lg"
-                    >
-                      7
-                    </span>
-                  </Tab>
-                  </TabList>
-                
-
-                <button className="p-2 hover:bg-gray-100 rounded-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
                   >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
-              </div>
-            
+                    1
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    2
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    3
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    4
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    5
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    6
+                  </span>
+                </Tab>
+                <Tab>
+                  <span
+                    className="px-4 py-2 bg-[#eef1f7]  text-black
+                       rounded-lg"
+                  >
+                    7
+                  </span>
+                </Tab>
+              </TabList>
+
+              <button className="p-2 hover:bg-gray-100 rounded-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
           </Tabs>
         </form>
       </main>
