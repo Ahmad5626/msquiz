@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { FileText, PlayCircle, CheckSquare, HelpCircle } from "lucide-react"
+import { FileText, PlayCircle, CheckSquare, HelpCircle, ChevronDown } from "lucide-react"
 
 
 const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const mainSliderRef = useRef(null);
   const thumbSliderRef = useRef(null);
@@ -35,58 +36,23 @@ const Quiz = () => {
     },
   };
 
-  function showSidebar() {
-    var sidebar = document.getElementById("mySidebar");
-    
-    if (sidebar.style.width === "0rem") {
-      sidebar.style.width = "20rem";
-      
-    } else {
-      sidebar.style.width = "0rem";
-     
-    }
-  }
   return (
     <div className="min-h-screen bg-white">
 
 
+
+
     
       {/* side bar */}
-      <div id="mySidebar" className=" sidebar z-50 fixed top-[9%] left-0  h-[90%] w-0 overflow-hidden transition-all duration-300 bg-[#eef1f7] border-l">
-        <div id="accordion-collapse" data-accordion="collapse">
-          <h2 id="accordion-collapse-heading-1">
-            <button
-              type="button"
-              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-[#4d5e6f]     dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-              data-accordion-target="#accordion-collapse-body-1"
-              aria-expanded="true"
-              aria-controls="accordion-collapse-body-1"
-            >
-              <span>Starting Course</span>
-              <svg
-                data-accordion-icon
-                class="w-3 h-3 rotate-180 shrink-0"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5 5 1 1 5"
-                />
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="accordion-collapse-body-1"
-            class="hidden"
-            aria-labelledby="accordion-collapse-heading-1"
-          >
-            <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
+      <div id="mySidebar" className={`sidebar z-50 fixed top-[9%] left-0  h-full w-[280px]  overflow-auto hidesrcollbar transition-all duration-300 bg-[#eef1f7] border-l ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} `}>
+       <details>
+       <summary className="flex items-center justify-between gap-2 py-4 px-2 bg-[#4d5e6f]  border-b border-gray-300">
+         
+          <h2 className="text-md font-medium text-white ">Starting quiz</h2>
+          <ChevronDown className="text-white"/>
+          </summary>
+          <div>
+          <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
       {/* Intro - Definitions */}
       <div className="flex items-center justify-between border-b border-gray-100 p-4">
         <div className="flex items-center gap-3">
@@ -147,40 +113,17 @@ const Quiz = () => {
         <div className="h-5 w-5 rounded-full border border-gray-200" />
       </div>
     </div>
+
           </div>
-          <h2 id="accordion-collapse-heading-2">
-            <button
-              type="button"
-              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-white bg-[#4d5e6f]     dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
-              data-accordion-target="#accordion-collapse-body-2"
-              aria-expanded="false"
-              aria-controls="accordion-collapse-body-2"
-            >
-              <span>After Intro</span>
-              <svg
-                data-accordion-icon
-                class="w-3 h-3 rotate-180 shrink-0"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5 5 1 1 5"
-                />
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="accordion-collapse-body-2"
-            class="hidden"
-            aria-labelledby="accordion-collapse-heading-2"
-          >
-           <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
+       </details>
+       <details>
+       <summary className="flex items-center justify-between gap-2 py-4 px-2 bg-[#4d5e6f]  border-b border-gray-300">
+         
+          <h2 className="text-md font-medium text-white">After Intro</h2>
+          <ChevronDown className="text-white"/>
+          </summary>
+          <div>
+          <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white">
       {/* Intro - Definitions */}
       <div className="flex items-center justify-between border-b border-gray-100 p-4">
         <div className="flex items-center gap-3">
@@ -241,8 +184,9 @@ const Quiz = () => {
         <div className="h-5 w-5 rounded-full border border-gray-200" />
       </div>
     </div>
+
           </div>
-        </div>
+       </details>
       </div>
 
       {/* Thumbnail slider */}
@@ -267,7 +211,7 @@ const Quiz = () => {
               <div className=" text-white p-2 rounded w-[50px]">
                 <img src="https://masterstudy.stylemixthemes.com/light-lms-elementor/wp-content/uploads/sites/30/2023/10/icon-150x150.png"></img>
               </div>
-              <button className="flex items-center gap-2 bg-[#dee2e9] rounded-lg px-4 py-2 font-mono" onClick={showSidebar}>
+              <button className="flex items-center gap-2 bg-[#dee2e9] rounded-lg px-4 py-2 font-mono" onClick={()=> setSidebarOpen(!sidebarOpen)}>
                 <svg
                   className="h-5 w-5"
                   viewBox="0 0 20 20"
